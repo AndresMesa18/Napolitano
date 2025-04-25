@@ -1,0 +1,34 @@
+---
+config:
+  theme: redux
+  layout: fixed
+---
+flowchart TD
+    A(["Inicio"]) --> n1["Ingresar un numero n"]
+    n1 --> n2["i= 1"]
+    n2 --> n3["Mod(n,i) == 0"]
+    n3 -- SI --> b["Guardar valores en matriz (contador)"]
+    n3 -- no --> c["i ++"]
+    b --> x["Contador = 2"]
+    c --> n4["devolver proceso"]
+    n4 --> n3
+    x -- si --> y["n es numero primo"]
+    x -- no --> z["escoja un n diferente"]
+    z --> n1
+    y --> n5["Fin"]
+    n3@{ shape: diam}
+    x@{ shape: diam}
+    n4@{ shape: rect}
+    n5@{ shape: rounded}
+     A:::Peach
+     n1:::Peach
+     n2:::Peach
+     n3:::Peach
+     b:::Peach
+     c:::Peach
+     x:::Peach
+     n4:::Peach
+     y:::Peach
+     z:::Peach
+     n5:::Peach
+    classDef Peach stroke-width:1px, stroke-dasharray:none, stroke:#FBB35A, fill:#FFEFDB, color:#8F632D
